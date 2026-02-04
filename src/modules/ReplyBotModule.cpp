@@ -7,9 +7,7 @@
  * message (DM) or a broadcast on the primary channel.  When a supported command is
  * received the bot responds with a short status message that includes the hop count
  * (minimum number of relays), RSSI and SNR of the received packet.  To avoid spamming
- * the network it enforces a per‑sender cooldown between responses.  By default the
- * module is enabled; define MESHTASTIC_EXCLUDE_REPLYBOT at build time to exclude it
- * entirely.  See the official firmware documentation for guidance on adding modules.
+ * the network it enforces a per‑sender cooldown between responses. See the official firmware documentation for guidance on adding modules.
  */
 
 #include "ReplyBotModule.h"
@@ -75,8 +73,7 @@ ReplyBotModule::ReplyBotModule() : SinglePortModule("replybot", meshtastic_PortN
 
 void ReplyBotModule::setup()
 {
-    // In future we may add a protobuf configuration; for now the module is
-    // always enabled when compiled in.
+    // In future we may add a protobuf configuration.
 }
 
 // Determine whether we want to process this packet.  We only care about
